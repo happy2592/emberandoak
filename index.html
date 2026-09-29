@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ember & Oak Bistro - Wood-fired kitchen, artisan pasta, and craft dining. Browse our menu, place your order, and settle your bill directly at our front counter.">
+  <title>Ember & Oak Bistro | Wood-Fired Kitchen & Artisan Dining</title>
+
+  <!-- Favicon Symbol -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%23f59e0b'/><path d='M50 20 Q65 45 50 75 Q35 45 50 20 Z' fill='%23ea580c'/></svg>">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       Navigation Bar
+       ======================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo" aria-label="Ember and Oak Bistro Homepage">
+        <div class="logo-symbol">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+          </svg>
+        </div>
+        <span>EMBER & OAK</span>
+      </a>
+
+      <!-- Desktop & Mobile Navigation Links -->
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="#menu" class="nav-link">Our Menu</a></li>
+          <li><a href="#ordering-guide" class="nav-link">How to Order</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- Cart Button & Mobile Toggle -->
+      <div class="nav-cta">
+        <button class="cart-button-badge" data-open-drawer="order" id="navCartBtn" aria-label="View Order Tray">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>Order Tray</span>
+          <span class="cart-count" id="headerCartCount">0</span>
+        </button>
+
+        <button class="mobile-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       Main Content
+       ======================================================================== -->
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Narrative -->
+          <div class="hero-content">
+            <div class="hero-announcement">
+              <span class="pulse-dot"></span>
+              <span>Kitchen open today 11:30 AM – 11:00 PM</span>
+            </div>
+
+            <h1 class="hero-title">
+              Where wood-fire craft meets <span class="gradient-text-gold">artisan dining</span>.
+            </h1>
+
+            <p class="hero-lead">
+              Hand-rolled pastas, dry-aged steaks seared over white oak embers, and farm-fresh harvest plates. Build your order directly from your phone or laptop, and settle your bill at our front counter.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#menu" class="btn btn-primary" id="heroExploreMenuBtn">
+                Explore Full Menu
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+              <button class="btn btn-secondary" data-open-drawer="order" id="heroViewTrayBtn">
+                View Your Order Tray
+              </button>
+            </div>
+
+            <!-- Counter Payment Assurance Banner -->
+            <div class="hero-counter-notice">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" style="flex-shrink:0;">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span><strong>Counter Payment Only:</strong> No online card entry or payment gateway needed. Generate your bill here and pay at the counter via Cash, Card, or UPI.</span>
+            </div>
+          </div>
+
+          <!-- Hero Visual Media -->
+          <div class="hero-visual-card">
+            <img src="assets/images/restaurant-hero.jpg" alt="Wood-fired grilled ribeye steak with herb butter and grilled asparagus" class="hero-img">
+            <div class="hero-badge-overlay">
+              <div>
+                <div class="hero-badge-title">Chef's Signature Cut</div>
+                <div class="hero-badge-desc">45-Day Dry Aged Prime Ribeye</div>
+              </div>
+              <div class="section-badge" style="margin-bottom:0; background:rgba(245,158,11,0.2);">
+                $34.50
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Culinary Highlights Strip -->
+    <section class="highlights-strip">
+      <div class="container">
+        <div class="highlights-grid">
+          <div class="highlight-box">
+            <div class="highlight-icon">🔥</div>
+            <div>
+              <div class="highlight-title">850° Wood-Fired Hearth</div>
+              <div class="highlight-text">Naturally seasoned red oak & fruitwoods</div>
+            </div>
+          </div>
+          <div class="highlight-box">
+            <div class="highlight-icon">🌱</div>
+            <div>
+              <div class="highlight-title">Locally Sourced Organic</div>
+              <div class="highlight-text">Directly from regional heritage farms</div>
+            </div>
+          </div>
+          <div class="highlight-box">
+            <div class="highlight-icon">🧾</div>
+            <div>
+              <div class="highlight-title">Easy Counter Bill</div>
+              <div class="highlight-text">No payment gateway, pay at counter</div>
+            </div>
+          </div>
+          <div class="highlight-box">
+            <div class="highlight-icon">🍷</div>
+            <div>
+              <div class="highlight-title">Curated Cellar & Tap</div>
+              <div class="highlight-text">Natural wines and craft botanicals</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         Interactive Restaurant Menu Section
+         ==================================================================== -->
+    <section class="section" id="menu">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">Kitchen Selections</div>
+          <h2 class="section-title">Explore Our Artisan Menu</h2>
+          <p class="section-desc">Select dishes to add to your order. When ready, review your tray to generate your itemized counter bill.</p>
+        </div>
+
+        <!-- Controls: Category Tabs, Search & Dietary Filter -->
+        <div class="menu-controls">
+          <div class="category-tabs">
+            <button class="tab-btn active" data-category="all">All Dishes</button>
+            <button class="tab-btn" data-category="starters">Starters & Tapas</button>
+            <button class="tab-btn" data-category="mains">Wood-Fired Mains</button>
+            <button class="tab-btn" data-category="pasta">Handmade Pastas & Pizzas</button>
+            <button class="tab-btn" data-category="desserts">Desserts</button>
+            <button class="tab-btn" data-category="drinks">Craft Beverages</button>
+          </div>
+
+          <div class="search-filter-row">
+            <input type="text" id="menuSearchInput" class="menu-search-input" placeholder="Search dishes (e.g., steak, pasta, burrata)..." aria-label="Search dishes">
+            <select id="dietaryFilter" class="dietary-filter" aria-label="Filter by dietary preference">
+              <option value="all">All Preferences</option>
+              <option value="veg">Vegetarian Only</option>
+              <option value="special">Chef Recommendations</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Dynamic Menu Grid (Populated by JavaScript) -->
+        <div class="menu-grid" id="menuGrid">
+          <!-- Populated by JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         How Counter Payment Works Guide
+         ==================================================================== -->
+    <section class="section" id="ordering-guide" style="background: rgba(255, 255, 255, 0.015); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge green-badge">Simple 4-Step Process</div>
+          <h2 class="section-title">How To Order & Pay At Counter</h2>
+          <p class="section-desc">Zero credit card forms online. Enjoy a frictionless dining experience designed for ease.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem;">
+          
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.25rem 2rem;">
+            <div style="font-size: 2.5rem; font-family: var(--font-serif); color: var(--accent-gold); margin-bottom: 0.75rem;">01</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: white;">Select Your Favorites</h3>
+            <p style="font-size: 0.925rem; color: var(--text-secondary); line-height: 1.6;">
+              Browse our live menu above and tap "Add to Order" on any dish, adjust quantities as desired.
+            </p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.25rem 2rem;">
+            <div style="font-size: 2.5rem; font-family: var(--font-serif); color: var(--accent-gold); margin-bottom: 0.75rem;">02</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: white;">Specify Dine-In or Takeaway</h3>
+            <p style="font-size: 0.925rem; color: var(--text-secondary); line-height: 1.6;">
+              In your order tray, select your service mode and enter your table number or name for pickup.
+            </p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.25rem 2rem;">
+            <div style="font-size: 2.5rem; font-family: var(--font-serif); color: var(--accent-gold); margin-bottom: 0.75rem;">03</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: white;">Generate Your Final Bill</h3>
+            <p style="font-size: 0.925rem; color: var(--text-secondary); line-height: 1.6;">
+              Tap "Generate Counter Bill" to receive your official itemized receipt and unique Order ID.
+            </p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.25rem 2rem;">
+            <div style="font-size: 2.5rem; font-family: var(--font-serif); color: var(--accent-gold); margin-bottom: 0.75rem;">04</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: white;">Direct Counter Payment</h3>
+            <p style="font-size: 0.925rem; color: var(--text-secondary); line-height: 1.6;">
+              Walk up to our front counter, show your Order ID on your screen, and pay via Cash, Card, or UPI!
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Guest Testimonials -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">Guest Experiences</div>
+          <h2 class="section-title">Loved by Food Lovers</h2>
+          <p class="section-desc">What our patrons say about our wood-fired flavors and seamless ordering.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.25rem;">
+            <div style="color: #fbbf24; margin-bottom: 1rem;">★★★★★</div>
+            <p style="font-style: italic; color: var(--text-primary); margin-bottom: 1.5rem; font-size: 1.05rem;">
+              "The Wood-Fired Prime Ribeye with herb butter is without exaggeration the best steak in the city. The digital bill system makes paying at the counter effortless!"
+            </p>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <div style="width: 42px; height: 42px; border-radius: 50%; background: #ea580c; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white;">
+                SL
+              </div>
+              <div>
+                <div style="font-weight: 600; color: white;">Sophia Laurent</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Verified Food Critic</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.25rem;">
+            <div style="color: #fbbf24; margin-bottom: 1rem;">★★★★★</div>
+            <p style="font-style: italic; color: var(--text-primary); margin-bottom: 1.5rem; font-size: 1.05rem;">
+              "The Truffle Tagliatelle and Smoked Burrata are heavenly. We ordered from our table, showed the bill at the counter, and walked out smiling. Outstanding dining."
+            </p>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <div style="width: 42px; height: 42px; border-radius: 50%; background: #f59e0b; display: flex; align-items: center; justify-content: center; font-weight: 700; color: white;">
+                MR
+              </div>
+              <div>
+                <div style="font-weight: 600; color: white;">Marcus Reed</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Regular Dine-In Patron</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       Persistent Floating Order Bar (Appears when items are in tray)
+       ======================================================================== -->
+  <div class="floating-order-bar" id="floatingOrderBar">
+    <div class="floating-cart-info">
+      <div class="floating-cart-count" id="floatingCartCount">0</div>
+      <div class="floating-cart-total">
+        Total: <span id="floatingCartTotal">$0.00</span>
+      </div>
+    </div>
+    <button class="btn btn-primary btn-sm" data-open-drawer="order" id="floatingViewBillBtn">
+      View Order & Bill
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ========================================================================
+       Slide-Over Order Drawer (Review items before final bill)
+       ======================================================================== -->
+  <div class="drawer-overlay" id="orderDrawerOverlay" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+    <div class="order-drawer">
+      <div class="drawer-header">
+        <h3 class="drawer-title" id="drawerTitle">Your Dining Order</h3>
+        <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close order drawer">&times;</button>
+      </div>
+
+      <div class="drawer-body">
+        <!-- Order Type Picker -->
+        <label style="display:block; font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">
+          Select Dining Mode:
+        </label>
+        <div class="order-type-picker">
+          <button class="order-type-btn active" data-order-type="dine-in">Dine-In (At Table)</button>
+          <button class="order-type-btn" data-order-type="takeaway">Takeaway / Counter Pickup</button>
+        </div>
+
+        <!-- Inputs: Table Number & Name -->
+        <div class="order-inputs">
+          <div id="tableInputGroup">
+            <label class="form-label" style="display:block; font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.35rem;" for="tableNumberInput">Table Number *</label>
+            <input type="text" id="tableNumberInput" class="drawer-input" placeholder="e.g. Table 4 or Bar 2" value="Table 4">
+          </div>
+
+          <div>
+            <label class="form-label" style="display:block; font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.35rem;" for="customerNameInput">Customer / Guest Name</label>
+            <input type="text" id="customerNameInput" class="drawer-input" placeholder="e.g. Alex Morgan">
+          </div>
+
+          <div>
+            <label class="form-label" style="display:block; font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.35rem;" for="specialNotesInput">Kitchen Requests (Optional)</label>
+            <input type="text" id="specialNotesInput" class="drawer-input" placeholder="e.g. Dressing on side, medium rare steak">
+          </div>
+        </div>
+
+        <!-- Selected Items List -->
+        <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">
+          Selected Dishes:
+        </div>
+        <div class="cart-items-list" id="drawerCartItems">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <div class="drawer-footer">
+        <div class="bill-summary">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="drawerSubtotal">$0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Service & Tax (5%)</span>
+            <span id="drawerTax">$0.00</span>
+          </div>
+          <div class="summary-row total-row">
+            <span>Total Payable</span>
+            <span id="drawerGrandTotal">$0.00</span>
+          </div>
+        </div>
+
+        <div class="counter-reminder">
+          📌 You will pay this exact total directly at the counter upon service.
+        </div>
+
+        <button class="btn btn-primary" style="width: 100%;" id="placeOrderBtn">
+          Generate Counter Bill
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       Final Counter Bill Modal (The receipt for the counter)
+       ======================================================================== -->
+  <div class="bill-modal-overlay" id="billModalOverlay" role="dialog" aria-modal="true" aria-labelledby="billModalTitle">
+    <div class="bill-paper">
+      
+      <!-- Bill Header -->
+      <div class="bill-paper-header">
+        <h2 class="bill-brand-name" id="billModalTitle">EMBER & OAK BISTRO</h2>
+        <p class="bill-brand-sub">Artisan Hearth & Wood-Fired Kitchen • Table & Counter Service</p>
+      </div>
+
+      <!-- Bill Body -->
+      <div class="bill-paper-body">
+        
+        <div class="bill-order-meta">
+          <div class="bill-meta-left">
+            <div style="font-size: 0.75rem; text-transform: uppercase; color: #64748b; letter-spacing: 0.05em;">Order Reference</div>
+            <h4 id="billOrderId">#EO-0000</h4>
+            <div style="font-size: 0.85rem; color: #1e293b; margin-top: 0.2rem;" id="billOrderType">Dine-In (Table #4)</div>
+          </div>
+          <div class="bill-meta-right">
+            <div id="billOrderTime">29/09/2026, 01:30 PM</div>
+            <div style="margin-top: 0.2rem;">Guest: <strong id="billCustomerName">Alex Morgan</strong></div>
+          </div>
+        </div>
+
+        <!-- Table of ordered dishes -->
+        <table class="bill-items-table">
+          <thead>
+            <tr>
+              <th>Dish</th>
+              <th>Qty</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="billTableBody">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+
+        <!-- Calculations -->
+        <div class="bill-calculation-block">
+          <div class="bill-calc-row">
+            <span>Subtotal:</span>
+            <span id="billSubtotal">$0.00</span>
+          </div>
+          <div class="bill-calc-row">
+            <span>Kitchen & Local Tax (5%):</span>
+            <span id="billTax">$0.00</span>
+          </div>
+          <div class="bill-calc-row grand-total">
+            <span>FINAL AMOUNT DUE:</span>
+            <span id="billTotalDue">$0.00</span>
+          </div>
+        </div>
+
+        <!-- Counter Payment Notice Banner -->
+        <div class="counter-pay-banner">
+          <div class="counter-pay-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+              <line x1="2" y1="10" x2="22" y2="10"></line>
+            </svg>
+            PAY AT FRONT COUNTER
+          </div>
+          <p class="counter-pay-text">
+            Please show this digital bill or Order Reference number to the cashier at our front counter. We accept <strong>Cash, Credit/Debit Cards, and Contactless/UPI</strong>.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Actions -->
+      <div class="bill-paper-footer">
+        <button class="btn-print" id="printBillBtn">
+          🖨️ Print / Save Bill
+        </button>
+        <button class="btn-new-order" id="newOrderBtn">
+          Start New Order
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       Footer
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="logo-symbol">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+              </svg>
+            </div>
+            <span>EMBER & OAK</span>
+          </a>
+          <p>
+            An artisan wood-fired culinary experience celebrating seasonal ingredients, open-hearth searing, and honest hospitality.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="#menu" class="footer-link">Browse Menu</a></li>
+            <li><a href="#ordering-guide" class="footer-link">How to Order</a></li>
+            <li><a href="about.html" class="footer-link">About Our Kitchen</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Operating Hours</h4>
+          <div class="footer-hours-item">
+            <strong>Mon – Thu:</strong> 11:30 AM – 10:00 PM
+          </div>
+          <div class="footer-hours-item">
+            <strong>Fri – Sat:</strong> 11:30 AM – 11:30 PM
+          </div>
+          <div class="footer-hours-item">
+            <strong>Sunday:</strong> 10:30 AM – 9:30 PM (Brunch & Dinner)
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Counter & Location</h4>
+          <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.75rem;">
+            📍 482 Hearthstone Way, Culinary Arts District
+          </p>
+          <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:0.75rem;">
+            📞 (555) 729-3820
+          </p>
+          <p style="font-size:0.85rem; color:#f59e0b;">
+            💡 Direct counter billing. No online payment setup required.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Ember & Oak Artisan Bistro Inc. All rights reserved.</div>
+        <div>Wood-Fired Hearth & Kitchen</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
